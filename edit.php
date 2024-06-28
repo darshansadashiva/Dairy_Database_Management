@@ -26,54 +26,44 @@
   </head>
   <body>
 
-    <?php
+  <?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "dry";
 
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "dry";
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    // Check connection
-    if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
-    }
+$id = $_GET['id'];
 
-    $id = $_GET['id'];
+$showquery = "SELECT * FROM farmer WHERE id=$id";
 
-    $showquery = "SELECT * FROM farmer WHERE id=$id";
+$showdata = mysqli_query($conn, $showquery);
 
-    $showdata = mysqli_query($conn,$showquery);
+$arrdata = mysqli_fetch_array($showdata);
 
-    $arrdata = mysqli_fetch_array($showdata);
+if (isset($_POST['updatefarmerdata'])) {
+    $idupdate = $_GET['id'];
+    $fname = $_POST['fname'];
+    $ph = $_POST['ph'];
+    $f_vid = $_POST['f_vid'];
+    $milk_type = $_POST['milk_type'];
+    $min_litre = $_POST['min_litre'];
+    $animalID = $_POST['animalID'];
 
+    $sql = "UPDATE farmer SET fname='$fname', ph='$ph', f_vid='$f_vid', milk_type='$milk_type', min_litre='$min_litre', animalID='$animalID' WHERE id=$idupdate";
 
-
-    if (isset($_POST['updatefarmerdata'])) {
-      $idupdate = $_GET['id'];
-      $fname  =  $_POST['fname'];
-
-      $ph         =  $_POST['ph'];
-      $f_vid    =  $_POST['f_vid'];
-      $milk_type  =  $_POST['milk_type'];
-      $min_litre  =  $_POST['min_litre'];
-      $animalID  =  $_POST['animalID'];
-
-    }
-
-$sql = "UPDATE farmer SET id=$id,fname='$fname',ph='$ph',f_vid='$f_vid',milk_type='$milk_type',min_litre='$min_litre',animalID='$animalID' WHERE id=$idupdate";
-
-
-$res  = mysqli_query($conn,$sql);
-
+    $res = mysqli_query($conn, $sql);
 
     if ($res) {
-      header('Location: farmer.php');
-
+        header('Location: farmer.php');
     }
-
-
+}
 
 $conn->close();
 ?>

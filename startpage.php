@@ -352,7 +352,7 @@ div.box-area img{
               <a href="startpage.php">
               <img src="images/NATURE-ONE-DAIRY-CORPORATE-LOGO-01.png" alt="" class="lg"></a>
               <span class="title">Dairy Management</span>
-              <a href="loginpage.html" class="login"><i class="fas fa-sign-in-alt"></i>Login</a>
+              <!-- <a href="loginpage.html" class="login"><i class="fas fa-sign-in-alt"></i>Login</a> -->
         </div>
 </header>
 
@@ -406,9 +406,9 @@ div.box-area img{
                         </div>
                         <div class="foot2">
                             <h3>find us</h3>
-                            <p>BANASHANKARI </P>
-                            <p>NEAR BANASHANKARI TTMC</p>
-                            <p>BANGALORE-560082</p>
+                            <p>Mallohalli</P>
+                            <p>Doddaballapura</p>
+                            <p>BANGALORE-561204</p>
                             <p>TELEPHONE:08518-232205</p>
                         </div>
                         <div class="foot3">
@@ -417,7 +417,6 @@ div.box-area img{
                             <br>
                             <form class="" action="" method="POST">
                             <input type="email" name="subscribe"  class="emailid" placeholder="Enter Your Email ID"/><button type="submit" onclick=href"www.gmail.com"><span class="maile">submit</span></button>
-                            <p>***Don't worry, we wont spam you!</p>
                             </form>
 
 

@@ -50,13 +50,15 @@
 		.main-box{width:auto;
 		margin-top:90px;
 		}
-	.heading{top:12%;
-		color:white;
+
+	.heading{
+	top:12%;
+	color:white;
 	font-size:35px;
 	text-align:center;
 	position:relative;
 	letter-spacing:3px;
-	line-height:10px
+	line-height:20px;
 	}
 .main-box{
 
@@ -120,13 +122,13 @@ background-color:rgba(255,255,255,0);}
 
 }
 body{
-  color: white;
+  color: black;
 }
 
 </style>
 </head>
 <body  class="bdy" >
-	<!--Header-->
+	
     <div class="header">
       <a href="startpage.php">  <img src="images/NATURE-ONE-DAIRY-CORPORATE-LOGO-01.png"  alt="logo" class="LOGO"></a>
 
@@ -151,14 +153,12 @@ body{
 				<input type="date" name="to-date"/>
 
                <br>
-			   <input type = "submit" style="color:white" class="btn btn-success submitf" name="billinfo" value = "Submit" />
+			   <input type = "submit" style="color:black" class="btn btn-success submitf" name="billinfo" value = "Submit" />
 			   <hr>
-
-
         </form>
        </div>
 	   <?php
-require_once "connection.php";
+	require_once "connection.php";
 	if(isset($_POST['billinfo']))
 	{$fid=$_POST['fid'];
 	 $frmdate=date("Y-m-d",strtotime($_POST['from-date']));
@@ -176,34 +176,33 @@ require_once "connection.php";
 			<form id="receipt" action="final.php" method="POST">
 				<label for="fid" >Farmer ID :</label>
 				<input type="text"   name="fid" value="<?php echo $row['id'];?>"/>
-        <br>
+        	<br>
 				<label for="fname" >Farmer Name:</label>
 				<input type="text" name="fname" value="<?php echo $row['fname'];?>"/>
-        <br>
+        	<br>
 				<label for="type" >Milk Type :</label>
 				<input type="text" name="type" value="<?php echo $row['milk_type'];?>"/>
-        <br>
+        	<br>
 				<label for="cost" >Cost per lit:</label>
 				<input type="text" name="cost" value="<?php if($row['milk_type']=="cow||COW||Cow")
 					{
-		             $price="select product_cost from Dairy_products where produt_id=210";
+		             $price="select product_cost from Dairy_products where product_id=210";
 					 $sl=mysqli_query($conn,$price);
 					 $result=mysqli_fetch_array($sl);
 					echo $result['product_cost'];
 					}
 					else{
-						$price="select product_cost from Dairy_products where produt_id=209";
+						$price="select product_cost from Dairy_products where product_id=209";
 						$sl=mysqli_query($conn,$price);
 					 	$result=mysqli_fetch_array($sl);
 						echo $result['product_cost'];
-						}
-
+						}tyope
 
 					?>"/>
-          <br>
+         	<br>
 				<label for="sum" >Net Quantity:</label>
 				<input type="text" name="sum"  value="<?php echo $row['sum(quan)'];?>"/>
-        <br>
+        	<br>
 				<label for="amount" >Net amount:</label>
 				<input type="text" name="amount"  value="<?php echo $row['sum(quan)']*$result['product_cost'];?>"/>
 				<br>

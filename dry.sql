@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 07, 2021 at 12:55 PM
--- Server version: 10.4.16-MariaDB
--- PHP Version: 7.4.12
+-- Generation Time: May 27, 2024 at 01:36 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,66 +34,53 @@ CREATE TABLE `bill` (
   `center_id` int(3) DEFAULT NULL,
   `quantity` float DEFAULT NULL,
   `amount` float DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `bill`
+-- Table structure for table `dairy_customers`
 --
 
-INSERT INTO `bill` (`bill_id`, `farmer_id`, `farmer_name`, `center_id`, `quantity`, `amount`) VALUES
-(1, 4, 'Lokesh ', 3, 2, 120),
-(2, 1, 'Ravi kumar', 1, 26, 1482),
-(3, 4, 'Lokesh ', 3, 2, 120),
-(4, 4, 'Lokesh ', 3, 2, 120),
-(5, 4, 'Lokesh ', 3, 2, 120),
-(6, 4, 'Lokesh ', 3, 2, 120),
-(7, 1, 'Ravi kumar', 1, 26, 1482),
-(8, 1, 'Ravi kumar', 1, 26, 1482),
-(9, 1, 'Ravi kumar', 1, 26, 1482),
-(10, 1, 'Ravi kumar', 1, 26, 1482),
-(11, 1, 'Ravi kumar', 1, 17, 969),
-(12, 1, 'Ravi kumar', 1, 17, 969),
-(13, 1, 'Ravi kumar', 1, 17, 969),
-(14, 1, 'Ravi kumar', 1, 17, 969),
-(15, 1, 'Ravi kumar', 1, 17, 969),
-(16, 1, 'Ravi kumar', 1, 17, 969),
-(17, 1, 'Ravi kumar', 1, 17, 969),
-(18, 1, 'Ravi kumar', 1, 17, 969),
-(19, 1, 'Ravi kumar', 1, 17, 969),
-(20, 1, 'Ravi kumar', 1, 17, 969),
-(21, 1, 'Ravi kumar', 1, 17, 969),
-(22, 1, 'Ravi kumar', 1, 17, 969),
-(23, 1, 'Ravi kumar', 1, 17, 969),
-(24, 1, 'Ravi kumar', 1, 17, 969),
-(25, 1, 'Ravi kumar', 1, 17, 969),
-(26, 1, 'Ravi kumar', 1, 17, 969),
-(27, 1, 'Ravi kumar', 1, 17, 969),
-(28, 1, 'Ravi kumar', 1, 17, 969),
-(29, 1, 'Ravi kumar', 1, 17, 969),
-(30, 1, 'Ravi kumar', 1, 17, 969),
-(31, 1, 'Ravi kumar', 1, 17, 969),
-(32, 1, 'Ravi kumar', 1, 17, 969),
-(33, 1, 'Ravi kumar', 1, 17, 969),
-(34, 1, 'Ravi kumar', 1, 17, 969),
-(35, 1, 'Ravi kumar', 1, 17, 969),
-(36, 1, 'Ravi kumar', 1, 17, 969),
-(37, 1, 'Ravi kumar', 1, 17, 969),
-(38, 1, 'Ravi kumar', 1, 17, 969),
-(39, 1, 'Ravi kumar', 1, 17, 969),
-(40, 1, 'Ravi kumar', 1, 17, 969),
-(41, 1, 'Ravi kumar', 1, 17, 969),
-(42, 1, 'Ravi kumar', 1, 17, 969),
-(43, 1, 'Ravi kumar', 1, 17, 969),
-(44, 1, 'Ravi kumar', 1, 17, 969),
-(45, 1, 'Ravi kumar', 1, 17, 969),
-(46, 1, 'Ravi kumar', 1, 17, 969),
-(47, 1, 'Ravi kumar', 1, 17, 969),
-(48, 1, 'Ravi kumar', 1, 17, 969),
-(49, 1, 'Ravi kumar', 1, 17, 969),
-(50, 1, 'Ravi kumar', 1, 17, 969),
-(51, 1, 'Ravi kumar', 1, 17, 969),
-(52, 1, 'Ravi kumar', 1, 17, 969),
-(53, 1, 'Ravi kumar', 1, 17, 969);
+CREATE TABLE `dairy_customers` (
+  `id` int(11) NOT NULL,
+  `customer_name` varchar(255) DEFAULT NULL,
+  `customer_mobile` varchar(10) DEFAULT NULL,
+  `Total_cost` decimal(10,2) DEFAULT NULL,
+  `PR1` int(11) DEFAULT NULL,
+  `PR2` int(11) DEFAULT NULL,
+  `PR3` int(11) DEFAULT NULL,
+  `PR4` int(11) DEFAULT NULL,
+  `PR5` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `dairy_customers`
+--
+
+INSERT INTO `dairy_customers` (`id`, `customer_name`, `customer_mobile`, `Total_cost`, `PR1`, `PR2`, `PR3`, `PR4`, `PR5`) VALUES
+(7, 'Usha', '9758526245', 848.50, 209, 0, 206, 207, 0),
+(8, 'Prajwal', '9544556258', 99.25, 209, 205, 0, 0, 0),
+(12, 'Darshan', '9544556258', 529.25, 209, 0, 0, 0, 208);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dairy_product`
+--
+
+CREATE TABLE `dairy_product` (
+  `product_id` int(5) NOT NULL,
+  `conn` varchar(30) NOT NULL,
+  `price` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `dairy_product`
+--
+
+INSERT INTO `dairy_product` (`product_id`, `conn`, `price`) VALUES
+(210, 'cow', 20);
 
 -- --------------------------------------------------------
 
@@ -108,26 +95,14 @@ CREATE TABLE `employee` (
   `salary` int(5) NOT NULL,
   `designation` varchar(10) NOT NULL,
   `address` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `employee`
 --
 
 INSERT INTO `employee` (`eid`, `ename`, `phno`, `salary`, `designation`, `address`) VALUES
-(12335, 'rahul', '9441733399', 3000, 'staff', 'kurnool'),
-(12336, 'govind', '9441733995', 3000, 'staff', 'kurnool'),
-(12337, 'gpoal', '9441733996', 3000, 'staff', 'kurnool'),
-(12338, 'ramya', '9441733998', 3000, 'staff', 'kurnool'),
-(12339, 'rashi', '9441733999', 3000, 'staff', 'kurnool'),
-(12340, 'priya', '9441733910', 3000, 'staff', 'kurnool'),
-(12341, 'sudheeer', '9441733912', 3000, 'staff', 'kurnool'),
-(12342, 'girish', '9441733913', 3000, 'staff', 'kurnool'),
-(12344, 'rehman', '9441733914', 3000, 'staff', 'kurnool'),
-(12345, 'ravi', '9908407185', 20000, 'staff', 'kurnool'),
-(12346, 'mani', '8688764855', 30000, 'manager', 'ndk'),
-(12347, 'rasi', '9908407285', 3000, 'manager', 'kudapa'),
-(12348, 'nani', '9666613357', 3000, 'manager', 'kurnool');
+(12354, 'Dhanush', '9888552455', 50000, 'Staff', 'Bangalore');
 
 -- --------------------------------------------------------
 
@@ -144,25 +119,14 @@ CREATE TABLE `farmer` (
   `min_litre` int(2) NOT NULL,
   `reg_date` date NOT NULL DEFAULT current_timestamp(),
   `animalID` int(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `farmer`
 --
 
 INSERT INTO `farmer` (`id`, `fname`, `ph`, `f_vid`, `milk_type`, `min_litre`, `reg_date`, `animalID`) VALUES
-(1, 'Ravi kumar', '2147483647', 1, 'cow', 1, '2021-07-23', 98123),
-(2, 'Kishore', '9908407281', 2, 'buffalo', 2, '2021-07-23', 98124),
-(3, 'Rahul', '9908407286', 4, 'cow', 1, '2021-07-23', 98125),
-(4, 'Lokesh ', '9908407288', 3, 'buffalo', 1, '2021-07-23', 98126),
-(5, 'Seshi', '9848870676', 6, 'cow', 2, '2021-07-23', 98127),
-(6, 'Nivesh', '9848870673', 5, 'buffalo', 2, '2021-07-23', 98128),
-(7, 'Bhargav', '9908407289', 9, 'buffalo', 2, '2021-07-23', 98131),
-(8, 'Charan', '9666613257', 7, 'buffalo', 2, '2021-07-23', 98132),
-(9, 'Dharma', '9666613258', 0, 'buffalo', 2, '2021-07-23', 98133),
-(10, 'Niranjan', '9848870987', 8, 'cow', 2, '2021-07-23', 98134),
-(11, 'ravindra', '9848870612', 10, 'buffalo', 1, '2021-07-25', 98145),
-(12, 'ramya', '9908407256', 6, 'cow', 2, '2021-07-28', 12378);
+(20, 'Durga', '9652775441', 0, 'Buffalo', 2, '2024-03-25', 2903);
 
 -- --------------------------------------------------------
 
@@ -175,23 +139,7 @@ CREATE TABLE `milk_center` (
   `cname` varchar(20) DEFAULT NULL,
   `village_id` int(3) DEFAULT NULL,
   `staff_id` int(3) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `milk_center`
---
-
-INSERT INTO `milk_center` (`cid`, `cname`, `village_id`, `staff_id`) VALUES
-(1, 'c1', 1, 12335),
-(2, 'c2', 2, 12336),
-(3, 'c3', 3, 12337),
-(4, 'c4', 4, 12338),
-(5, 'c5', 5, 12339),
-(6, 'c6', 6, 12340),
-(7, 'c7', 7, 12341),
-(8, 'c8', 8, 12342),
-(9, 'c9', 9, 12344),
-(10, 'c10', 10, 12345);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -203,7 +151,7 @@ CREATE TABLE `products` (
   `pid` int(3) NOT NULL,
   `pname` varchar(15) NOT NULL,
   `pcost` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `products`
@@ -229,34 +177,7 @@ CREATE TABLE `record` (
   `dt` date DEFAULT NULL,
   `fid` int(5) DEFAULT NULL,
   `quan` float DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `record`
---
-
-INSERT INTO `record` (`dt`, `fid`, `quan`) VALUES
-('2021-07-01', 1, 2),
-('2021-07-01', 2, 2),
-('2021-07-01', 3, 2),
-('2021-07-01', 4, 2),
-('2021-07-01', 5, 2),
-('2021-07-02', 1, 3),
-('2021-07-02', 2, 2),
-('2021-07-02', 3, 2),
-('2021-07-01', 6, 1),
-('2021-07-02', 6, 2),
-('2021-07-03', 3, 2),
-('2021-07-05', 2, 3),
-('2021-07-04', 1, 2),
-('2021-07-06', 1, 4),
-('2021-07-10', 1, 3),
-('2021-07-12', 1, 3),
-('2021-07-16', 1, 2),
-('2021-07-19', 1, 2),
-('2021-07-22', 1, 2),
-('2021-07-23', 1, 3),
-('2021-07-29', 9, 23);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -268,7 +189,7 @@ CREATE TABLE `village` (
   `vid` int(3) NOT NULL,
   `vname` varchar(30) NOT NULL,
   `route_no` int(3) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `village`
@@ -297,6 +218,12 @@ ALTER TABLE `bill`
   ADD PRIMARY KEY (`bill_id`),
   ADD KEY `farmer_id` (`farmer_id`),
   ADD KEY `center_id` (`center_id`);
+
+--
+-- Indexes for table `dairy_customers`
+--
+ALTER TABLE `dairy_customers`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `employee`
@@ -349,16 +276,22 @@ ALTER TABLE `bill`
   MODIFY `bill_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
+-- AUTO_INCREMENT for table `dairy_customers`
+--
+ALTER TABLE `dairy_customers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `eid` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12351;
+  MODIFY `eid` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12355;
 
 --
 -- AUTO_INCREMENT for table `farmer`
 --
 ALTER TABLE `farmer`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `products`

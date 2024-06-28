@@ -48,8 +48,9 @@
               die("Connection failed: " . $conn->connect_error);
             }
 
-            $sql = "SELECT * FROM `Dairy_customers` ORDER BY `invoice_id` DESC ";
+            $sql = "SELECT * FROM `Dairy_customers` ORDER BY `id` DESC"; 
             $query_run = mysqli_query($conn, $sql);
+
       ?>
     <table  class="table table-bordered border-success">
       <thead>
@@ -70,7 +71,7 @@
       ?>
     <tbody>
           <tr>
-            <td> <?php echo $row['invoice_id']; ?> </td>
+            <td> <?php echo $row['id']; ?> </td>
             <td> <?php echo $row['customer_name']; ?> </td>
             <td> <?php echo $row['customer_mobile']; ?> </td>
             <td><i class="fas fa-rupee-sign"></i> <?php echo $row['Total_cost']; ?> </td>

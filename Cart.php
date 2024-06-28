@@ -14,13 +14,13 @@
          $CURD = document.getElementById("curd").value;
          $GHEE = document.getElementById("ghee").value;
          $CHEESE = document.getElementById("cheese").value;
-         $BUTTER = document.getElementById("BUTTER").value;
+         $PANEER = document.getElementById("PANEER").value;
 
 
       // Compute the cost
 
         document.getElementById("cost").value =
-        totalCost = $MILK * 52.25+ $CURD * 50 + $GHEE * 400 + $CHEESE * 410 + $BUTTER * 510;
+        totalCost = $MILK * 52.25+ $CURD * 50 + $GHEE * 400 + $CHEESE * 410 + $PANEER * 510;
       }
 
     </script>
@@ -156,10 +156,10 @@
           </tr>
           <tr>
             <td> <img src="images/butter1.jpg" alt="chesse"> </td>
-            <th> BUTTER 1KG </th>
+            <th> PANEER 1KG </th>
             <td><i class="fas fa-rupee-sign"></i> 510 </td>
             <td> <label for="id_5"> <input type="Checkbox" name="id_5"  value="208"/>   208</label> </td>
-            <td> <input type = "text"  id = "BUTTER" name="quantity5" value="0"
+            <td> <input type = "text"  id = "PANEER" name="quantity5" value="0"
                   size = "10" /></td>
           </tr>
 
